@@ -9,5 +9,7 @@ package com.example.Api_Rest_Muni.models;
  * @author stephano
  */
 public class DetallesPago {
+    //Relacion de muchos a uno  con Pago
+    //Relacion de muchos a uno con Tramite
     
 }
