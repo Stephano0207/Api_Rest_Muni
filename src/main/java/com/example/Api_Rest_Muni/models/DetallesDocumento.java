@@ -11,8 +11,6 @@ import jakarta.persistence.Table;
  *
  * @author stephano
  */
-@Entity
-@Table(name="DetallesDocumento")
 public class DetallesDocumento {
     
     private String rutaArchivo;

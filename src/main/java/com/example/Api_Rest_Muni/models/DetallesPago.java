@@ -11,8 +11,6 @@ import jakarta.persistence.Table;
  *
  * @author stephano
  */
-@Entity
-@Table(name="DetallesPago")
 public class DetallesPago {
     //Relacion de muchos a uno  con Pago
     //Relacion de muchos a uno con Tramite

@@ -12,8 +12,6 @@ import java.sql.Date;
  *
  * @author stephano
  */
-@Entity
-@Table(name="AvanceTramite")
 public class AvanceTramite {
     
     private Date fechaAvance;

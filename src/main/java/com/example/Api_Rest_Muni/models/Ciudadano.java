@@ -5,17 +5,16 @@
 package com.example.Api_Rest_Muni.models;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import org.springframework.data.annotation.Id;
+
 
 /**
  *
  * @author stephano
  */
 @Entity
-@Table(name = "Ciudadano")
+@Table(name="Ciudadano")
 public class Ciudadano {
 
     @Id

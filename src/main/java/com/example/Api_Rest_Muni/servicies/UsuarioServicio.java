@@ -8,6 +8,7 @@ import com.example.Api_Rest_Muni.models.Usuario;
 import com.example.Api_Rest_Muni.repositories.UsuarioRepositorio;
 import java.util.ArrayList;
 import java.util.Optional;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -16,6 +17,7 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class UsuarioServicio {
+    @Autowired
     private UsuarioRepositorio usuarioRepositorio;
     
     public ArrayList<Usuario> obtenerUsuarios(){
@@ -30,9 +32,9 @@ public class UsuarioServicio {
         return usuarioRepositorio.findById(id);
     }
     
-    public ArrayList<Usuario> obtenerPorPrioridad(Integer prioridad){
-        return usuarioRepositorio.findByPrioridad(prioridad);
-    }
+//    public ArrayList<Usuario> obtenerPorPrioridad(Integer prioridad){
+//        return usuarioRepositorio.findByPrioridad(prioridad);
+//    }
     
     public boolean eliminarUsuario(Long id){
         try{

@@ -7,8 +7,8 @@ package com.example.Api_Rest_Muni.models;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import org.springframework.data.annotation.Id;
 
 /**
  *
@@ -17,7 +17,7 @@ import org.springframework.data.annotation.Id;
 @Entity
 @Table(name="PrecioTramite")
 public class PrecioTramite {
-        @Id
+    @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY) 
     private Long idTramite;
     private String nombre;
