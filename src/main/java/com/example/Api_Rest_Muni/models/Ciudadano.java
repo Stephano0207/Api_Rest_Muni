@@ -4,11 +4,21 @@
  */
 package com.example.Api_Rest_Muni.models;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Table;
+import org.springframework.data.annotation.Id;
+
 /**
  *
  * @author stephano
  */
+@Entity
+@Table(name = "Ciudadano")
 public class Ciudadano {
+
+    @Id
     private char dni;
     private String nombres;
     private String apellidos;
@@ -85,8 +95,5 @@ public class Ciudadano {
     public void setEmail(String email) {
         this.email = email;
     }
-    
-    
-    
-    
+
 }

@@ -4,10 +4,15 @@
  */
 package com.example.Api_Rest_Muni.models;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
 /**
  *
  * @author stephano
  */
+@Entity
+@Table(name="DetallesDocumento")
 public class DetallesDocumento {
     
     private String rutaArchivo;

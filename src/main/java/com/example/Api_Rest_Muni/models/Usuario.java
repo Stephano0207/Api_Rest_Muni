@@ -4,16 +4,24 @@
  */
 package com.example.Api_Rest_Muni.models;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Table;
+
 import org.springframework.data.annotation.Id;
 
 /**
  *
  * @author stephano
  */
-
+@Entity
+@Table(name="Usuario")
 public class Usuario {
     
-    @Id private Long idUsuario;
+    @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY) 
+    private Long idUsuario;
     private String email;
     private String password;
     //Relacion de muchos a uno con AreaTrabajo

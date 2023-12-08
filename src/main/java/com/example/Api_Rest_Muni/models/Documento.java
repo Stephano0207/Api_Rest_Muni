@@ -4,14 +4,23 @@
  */
 package com.example.Api_Rest_Muni.models;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Table;
 import java.sql.Date;
+import org.springframework.data.annotation.Id;
 
 /**
  *
  * @author stephano
  */
+@Entity
+@Table(name="Documento")
 public class Documento {
-    private int idDocumento;
+        @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY) 
+    private Long idDocumento;
     private int numDoc;
     private String tipo;
     private Date fechaRecepcion;
@@ -29,7 +38,7 @@ public class Documento {
         this.numerosDeHojas = numerosDeHojas;
     }
 
-    public Documento(int idDocumento, int numDoc, String tipo, Date fechaRecepcion, int numerosDeHojas) {
+    public Documento(Long idDocumento, int numDoc, String tipo, Date fechaRecepcion, int numerosDeHojas) {
         this.idDocumento = idDocumento;
         this.numDoc = numDoc;
         this.tipo = tipo;
@@ -37,11 +46,11 @@ public class Documento {
         this.numerosDeHojas = numerosDeHojas;
     }
 
-    public int getIdDocumento() {
+    public Long getIdDocumento() {
         return idDocumento;
     }
 
-    public void setIdDocumento(int idDocumento) {
+    public void setIdDocumento(Long idDocumento) {
         this.idDocumento = idDocumento;
     }
 

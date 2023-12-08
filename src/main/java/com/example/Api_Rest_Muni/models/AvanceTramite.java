@@ -4,12 +4,16 @@
  */
 package com.example.Api_Rest_Muni.models;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 import java.sql.Date;
 
 /**
  *
  * @author stephano
  */
+@Entity
+@Table(name="AvanceTramite")
 public class AvanceTramite {
     
     private Date fechaAvance;

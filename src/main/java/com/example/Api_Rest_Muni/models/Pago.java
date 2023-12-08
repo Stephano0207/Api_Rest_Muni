@@ -4,15 +4,23 @@
  */
 package com.example.Api_Rest_Muni.models;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Table;
 import java.sql.Date;
+import org.springframework.data.annotation.Id;
 
 /**
  *
  * @author stephano
  */
+@Entity
+@Table(name="Pago")
 public class Pago {
-    
-    private int codigoPago;
+        @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY) 
+    private Long codigoPago;
     private float monto;
     private  Date fecha;
     //Relacion de uno a muchos con DEtallesPago
@@ -25,7 +33,7 @@ public class Pago {
         this.fecha = fecha;
     }
 
-    public Pago(int codigoPago, float monto, Date fecha) {
+    public Pago(Long codigoPago, float monto, Date fecha) {
         this.codigoPago = codigoPago;
         this.monto = monto;
         this.fecha = fecha;
@@ -33,11 +41,11 @@ public class Pago {
 
     
     
-    public int getCodigoPago() {
+    public Long getCodigoPago() {
         return codigoPago;
     }
 
-    public void setCodigoPago(int codigoPago) {
+    public void setCodigoPago(Long codigoPago) {
         this.codigoPago = codigoPago;
     }
 

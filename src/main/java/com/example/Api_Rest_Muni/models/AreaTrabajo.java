@@ -4,31 +4,40 @@
  */
 package com.example.Api_Rest_Muni.models;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Table;
+import org.springframework.data.annotation.Id;
+
 /**
  *
  * @author stephano
  */
+@Entity
+@Table(name = "AreaTrabajo")
 public class AreaTrabajo {
-    private int idAreaTrabajo;
-    
-    private String nombre;
-    
-    ////Relacion de uno a muchos con Usuario
-  
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long idAreaTrabajo;
+
+    private String nombre;
+
+    ////Relacion de uno a muchos con Usuario
     public AreaTrabajo() {
     }
 
-    public AreaTrabajo(int idAreaTrabajo, String nombre) {
+    public AreaTrabajo(Long idAreaTrabajo, String nombre) {
         this.idAreaTrabajo = idAreaTrabajo;
         this.nombre = nombre;
     }
 
-    public int getIdAreaTrabajo() {
+    public Long getIdAreaTrabajo() {
         return idAreaTrabajo;
     }
 
-    public void setIdAreaTrabajo(int idAreaTrabajo) {
+    public void setIdAreaTrabajo(Long idAreaTrabajo) {
         this.idAreaTrabajo = idAreaTrabajo;
     }
 
@@ -44,6 +53,5 @@ public class AreaTrabajo {
     public String toString() {
         return "AreaTrabajo{" + "idAreaTrabajo=" + idAreaTrabajo + ", nombre=" + nombre + '}';
     }
-    
-    
+
 }

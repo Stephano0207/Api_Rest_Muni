@@ -4,10 +4,15 @@
  */
 package com.example.Api_Rest_Muni.models;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
 /**
  *
  * @author stephano
  */
+@Entity
+@Table(name="DetallesPago")
 public class DetallesPago {
     //Relacion de muchos a uno  con Pago
     //Relacion de muchos a uno con Tramite

@@ -4,12 +4,22 @@
  */
 package com.example.Api_Rest_Muni.models;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Table;
+import org.springframework.data.annotation.Id;
+
 /**
  *
  * @author stephano
  */
+@Entity
+@Table(name="PrecioTramite")
 public class PrecioTramite {
-    private int idTramite;
+        @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY) 
+    private Long idTramite;
     private String nombre;
     private float String;
     //Relacion de uno a muchos con DetallesPago
@@ -17,7 +27,7 @@ public class PrecioTramite {
     public PrecioTramite() {
     }
 
-    public PrecioTramite(int idTramite, String nombre, float String) {
+    public PrecioTramite(Long idTramite, String nombre, float String) {
         this.idTramite = idTramite;
         this.nombre = nombre;
         this.String = String;
@@ -28,11 +38,11 @@ public class PrecioTramite {
         this.String = String;
     }
 
-    public int getIdTramite() {
+    public Long getIdTramite() {
         return idTramite;
     }
 
-    public void setIdTramite(int idTramite) {
+    public void setIdTramite(Long idTramite) {
         this.idTramite = idTramite;
     }
 
