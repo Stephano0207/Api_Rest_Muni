@@ -4,9 +4,12 @@
  */
 package com.example.Api_Rest_Muni.models;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.MapsId;
 import jakarta.persistence.Table;
 import java.sql.Date;
 
@@ -14,18 +17,25 @@ import java.sql.Date;
  *
  * @author stephano
  */
+@Entity
+@Table(name="AvanceTramite")
 public class AvanceTramite {
-    
+    @EmbeddedId
+    private AvanceTramiteKey id;
+    @Column
     private Date fechaAvance;
+    @Column
     private String estado;
     
     //Relacion  de muchos a uno con Usuario
     @ManyToOne()
-    @JoinColumn(name="fkUsuario")
+    @MapsId("usuarioId")
+    @JoinColumn(name="usuario_id")
     private Usuario usuario;
     //Relacion  de muchos a uno  con Documento
     @ManyToOne()
-    @JoinColumn(name="fkDocumento")
+    @MapsId("documentoId")
+    @JoinColumn(name="documento_id")
     private Documento documento;
 
     public AvanceTramite() {
@@ -71,6 +81,14 @@ public class AvanceTramite {
 
     public void setDocumento(Documento documento) {
         this.documento = documento;
+    }
+
+    public AvanceTramiteKey getId() {
+        return id;
+    }
+
+    public void setId(AvanceTramiteKey id) {
+        this.id = id;
     }
     
     

@@ -4,26 +4,37 @@
  */
 package com.example.Api_Rest_Muni.models;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.MapsId;
 import jakarta.persistence.Table;
 
 /**
  *
  * @author stephano
  */
+@Entity
+@Table(name="DetallesDocumento")
 public class DetallesDocumento {
+    @EmbeddedId
+    private DetallesDocumentoKey id;
     
+    @Column
     private String rutaArchivo;
+    @Column
     private String estado;
     //Relacion de muchos a uno con Ciudadano
     @ManyToOne()
-    @JoinColumn(name="fkCiudadano")
+    @MapsId("ciudadanoId")
+    @JoinColumn(name="ciudadano_id")
     private Ciudadano ciudadano;
     //Relacion de muchos a uno con Documento
     @ManyToOne()
-    @JoinColumn(name="fkDocumento")
+    @MapsId("documentoId")
+    @JoinColumn(name="documento_id")
     private Documento documento;
 
     public DetallesDocumento(String rutaArchivo, String estado) {
@@ -69,6 +80,14 @@ public class DetallesDocumento {
     @Override
     public String toString() {
         return "DetallesDocumento{" + "rutaArchivo=" + rutaArchivo + ", estado=" + estado + '}';
+    }
+
+    public DetallesDocumentoKey getId() {
+        return id;
+    }
+
+    public void setId(DetallesDocumentoKey id) {
+        this.id = id;
     }
     
     

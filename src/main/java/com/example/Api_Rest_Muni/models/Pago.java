@@ -11,6 +11,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import java.sql.Date;
 import java.util.ArrayList;
@@ -36,6 +37,9 @@ public class Pago {
     )
     private ArrayList<PrecioTramite> tramites;
    
+    @ManyToOne()
+    @JoinColumn(name="ciudadanoId")
+    private Ciudadano ciudadano;
     
     public Pago() {
     }
@@ -88,6 +92,14 @@ public class Pago {
     @Override
     public String toString() {
         return "Pago{" + "codigoPago=" + codigoPago + ", monto=" + monto + ", fecha=" + fecha + '}';
+    }
+
+    public Ciudadano getCiudadano() {
+        return ciudadano;
+    }
+
+    public void setCiudadano(Ciudadano ciudadano) {
+        this.ciudadano = ciudadano;
     }
     
     

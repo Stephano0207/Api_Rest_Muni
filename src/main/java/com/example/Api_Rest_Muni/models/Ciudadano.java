@@ -27,11 +27,11 @@ public class Ciudadano {
     private char numeroCelular;
     private String email;
     //Relacion de uno a muchos con DetallesDocumento
-    @OneToMany(mappedBy="docToCiudadano")
+    @OneToMany(mappedBy="ciudadano")
     private ArrayList<DetallesDocumento> detallesDocumento;
     
     //Relacion de uno a muchos con Pago
-    @OneToMany(mappedBy="pagotociudadano")
+    @OneToMany(mappedBy="ciudadano")
     private ArrayList<Pago> pagos;
     public Ciudadano() {
     }
