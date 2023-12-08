@@ -8,7 +8,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
+import java.util.ArrayList;
 
 /**
  *
@@ -22,8 +24,9 @@ public class PrecioTramite {
     private Long idTramite;
     private String nombre;
     private float String;
-    //Relacion de uno a muchos con DetallesPago
-
+    //Relacion de muchos a muchos con Pago
+    @ManyToMany(mappedBy="tramites")
+    private ArrayList<Pago> pagos;
     public PrecioTramite() {
     }
 

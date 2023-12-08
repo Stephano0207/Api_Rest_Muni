@@ -5,6 +5,8 @@
 package com.example.Api_Rest_Muni.models;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 /**
@@ -16,7 +18,13 @@ public class DetallesDocumento {
     private String rutaArchivo;
     private String estado;
     //Relacion de muchos a uno con Ciudadano
+    @ManyToOne()
+    @JoinColumn(name="fkCiudadano")
+    private Ciudadano ciudadano;
     //Relacion de muchos a uno con Documento
+    @ManyToOne()
+    @JoinColumn(name="fkDocumento")
+    private Documento documento;
 
     public DetallesDocumento(String rutaArchivo, String estado) {
         this.rutaArchivo = rutaArchivo;
@@ -40,6 +48,22 @@ public class DetallesDocumento {
 
     public void setEstado(String estado) {
         this.estado = estado;
+    }
+
+    public Ciudadano getCiudadano() {
+        return ciudadano;
+    }
+
+    public void setCiudadano(Ciudadano ciudadano) {
+        this.ciudadano = ciudadano;
+    }
+
+    public Documento getDocumento() {
+        return documento;
+    }
+
+    public void setDocumento(Documento documento) {
+        this.documento = documento;
     }
 
     @Override

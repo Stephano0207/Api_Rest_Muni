@@ -11,7 +11,9 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import java.util.ArrayList;
 
 /**
  *
@@ -30,22 +32,29 @@ public class Usuario {
     private String password;
     @ManyToOne()
     @JoinColumn(name = "fkUsuario")
-    private AreaTrabajo areaTrabajo;
     //Relacion de muchos a uno con AreaTrabajo
+    private AreaTrabajo areaTrabajo;
 
     //Relacion de uno a muchos con AvanceTramite
-    public Usuario(Long idUsuario, String email, String password, AreaTrabajo areaTrabajo) {
+    @OneToMany(mappedBy="usuario")
+    private ArrayList<AvanceTramite> avanceTramite;
+
+    public Usuario(Long idUsuario, String email, String password, AreaTrabajo areaTrabajo, ArrayList<AvanceTramite> avanceTramite) {
         this.idUsuario = idUsuario;
         this.email = email;
         this.password = password;
         this.areaTrabajo = areaTrabajo;
+        this.avanceTramite = avanceTramite;
     }
 
-    public Usuario(String email, String password, AreaTrabajo areaTrabajo) {
+    public Usuario(String email, String password, AreaTrabajo areaTrabajo, ArrayList<AvanceTramite> avanceTramite) {
         this.email = email;
         this.password = password;
         this.areaTrabajo = areaTrabajo;
+        this.avanceTramite = avanceTramite;
     }
+    
+   
 
     public Usuario() {
     }
@@ -85,6 +94,14 @@ public class Usuario {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public ArrayList<AvanceTramite> getAvanceTramite() {
+        return avanceTramite;
+    }
+
+    public void setAvanceTramite(ArrayList<AvanceTramite> avanceTramite) {
+        this.avanceTramite = avanceTramite;
     }
 
 }

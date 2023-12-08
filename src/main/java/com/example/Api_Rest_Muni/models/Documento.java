@@ -25,8 +25,12 @@ public class Documento {
     private String tipo;
     private Date fechaRecepcion;
     private int numerosDeHojas;
-    //Relacion de uno a muchos con DetallesDocumento
-    //Relacion de uno a muchos con AvanceTramite
+//    //Relacion de uno a muchos con DetallesDocumento
+//    @OneToMany
+//    private ArrayList<DetallesDocumento> detallesDocumento;
+//    //Relacion de uno a muchos con AvanceTramite
+//    @OneToMany
+//    private ArrayList<AvanceTramite> avanceTramite;
 
     public Documento() {
     }

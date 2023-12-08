@@ -6,7 +6,9 @@ package com.example.Api_Rest_Muni.models;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import java.util.ArrayList;
 
 
 /**
@@ -25,8 +27,12 @@ public class Ciudadano {
     private char numeroCelular;
     private String email;
     //Relacion de uno a muchos con DetallesDocumento
+    @OneToMany(mappedBy="docToCiudadano")
+    private ArrayList<DetallesDocumento> detallesDocumento;
+    
     //Relacion de uno a muchos con Pago
-
+    @OneToMany(mappedBy="pagotociudadano")
+    private ArrayList<Pago> pagos;
     public Ciudadano() {
     }
 
@@ -93,6 +99,22 @@ public class Ciudadano {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public ArrayList<DetallesDocumento> getDetallesDocumento() {
+        return detallesDocumento;
+    }
+
+    public void setDetallesDocumento(ArrayList<DetallesDocumento> detallesDocumento) {
+        this.detallesDocumento = detallesDocumento;
+    }
+
+    public ArrayList<Pago> getPagos() {
+        return pagos;
+    }
+
+    public void setPagos(ArrayList<Pago> pagos) {
+        this.pagos = pagos;
     }
 
 }

@@ -5,6 +5,8 @@
 package com.example.Api_Rest_Muni.models;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import java.sql.Date;
 
@@ -16,8 +18,15 @@ public class AvanceTramite {
     
     private Date fechaAvance;
     private String estado;
+    
     //Relacion  de muchos a uno con Usuario
+    @ManyToOne()
+    @JoinColumn(name="fkUsuario")
+    private Usuario usuario;
     //Relacion  de muchos a uno  con Documento
+    @ManyToOne()
+    @JoinColumn(name="fkDocumento")
+    private Documento documento;
 
     public AvanceTramite() {
     }
