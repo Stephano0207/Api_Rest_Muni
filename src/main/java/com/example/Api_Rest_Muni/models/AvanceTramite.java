@@ -56,6 +56,22 @@ public class AvanceTramite {
     public String toString() {
         return "AvanceTramite{" + "fechaAvance=" + fechaAvance + ", estado=" + estado + '}';
     }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
+    public Documento getDocumento() {
+        return documento;
+    }
+
+    public void setDocumento(Documento documento) {
+        this.documento = documento;
+    }
     
     
     
