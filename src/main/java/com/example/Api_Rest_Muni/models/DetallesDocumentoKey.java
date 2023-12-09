@@ -17,8 +17,14 @@ import java.util.Objects;
 public class DetallesDocumentoKey implements Serializable {
    @Column(name="documento_id")
    private Long documentoId;
-   @Column(name="ciudadano_id")
-   private char ciudadanoId;
+   @Column(name="ciudadano_id",length=9)
+   
+   private Character ciudadanoId;
+
+    public DetallesDocumentoKey(Long documentoId, Character ciudadanoId) {
+        this.documentoId = documentoId;
+        this.ciudadanoId = ciudadanoId;
+    }
 
    
 
@@ -33,24 +39,24 @@ public class DetallesDocumentoKey implements Serializable {
         this.documentoId = documentoId;
     }
 
-    public char getCiudadanoId() {
+    public Character getCiudadanoId() {
         return ciudadanoId;
     }
 
-    public void setCiudadanoId(char ciudadanoId) {
+    public void setCiudadanoId(Character ciudadanoId) {
         this.ciudadanoId = ciudadanoId;
     }
 
-    public DetallesDocumentoKey(Long documentoId, char ciudadanoId) {
-        this.documentoId = documentoId;
-        this.ciudadanoId = ciudadanoId;
+    @Override
+    public String toString() {
+        return "DetallesDocumentoKey{" + "documentoId=" + documentoId + ", ciudadanoId=" + ciudadanoId + '}';
     }
 
     @Override
     public int hashCode() {
         int hash = 3;
-        hash = 89 * hash + Objects.hashCode(this.documentoId);
-        hash = 89 * hash + this.ciudadanoId;
+        hash = 23 * hash + Objects.hashCode(this.documentoId);
+        hash = 23 * hash + Objects.hashCode(this.ciudadanoId);
         return hash;
     }
 
@@ -66,11 +72,15 @@ public class DetallesDocumentoKey implements Serializable {
             return false;
         }
         final DetallesDocumentoKey other = (DetallesDocumentoKey) obj;
-        if (this.ciudadanoId != other.ciudadanoId) {
+        if (!Objects.equals(this.documentoId, other.documentoId)) {
             return false;
         }
-        return Objects.equals(this.documentoId, other.documentoId);
+        return Objects.equals(this.ciudadanoId, other.ciudadanoId);
     }
+
+    
+
+   
 
    
 

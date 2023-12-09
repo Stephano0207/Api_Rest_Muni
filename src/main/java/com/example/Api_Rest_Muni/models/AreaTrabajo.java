@@ -37,6 +37,10 @@ public class AreaTrabajo {
         this.nombre = nombre;
     }
 
+    public AreaTrabajo(String nombre) {
+        this.nombre = nombre;
+    }
+
     public AreaTrabajo(String nombre, ArrayList<Usuario> usuarios) {
         this.nombre = nombre;
         this.usuarios = usuarios;
