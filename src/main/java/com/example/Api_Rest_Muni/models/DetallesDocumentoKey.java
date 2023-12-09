@@ -17,8 +17,7 @@ import java.util.Objects;
 public class DetallesDocumentoKey implements Serializable {
    @Column(name="documento_id")
    private Long documentoId;
-   @Column(name="ciudadano_id",length=9)
-   
+   @Column(name="ciudadano_id",length=9)   
    private Character ciudadanoId;
 
     public DetallesDocumentoKey(Long documentoId, Character ciudadanoId) {

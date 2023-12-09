@@ -4,6 +4,7 @@
  */
 package com.example.Api_Rest_Muni.models;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -22,23 +23,25 @@ public class PrecioTramite {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY) 
     private Long idTramite;
+    @Column
     private String nombre;
-    private float String;
+    @Column
+    private float precio;
     //Relacion de muchos a muchos con Pago
     @ManyToMany(mappedBy="tramites")
     private ArrayList<Pago> pagos;
     public PrecioTramite() {
     }
 
-    public PrecioTramite(Long idTramite, String nombre, float String) {
+    public PrecioTramite(Long idTramite, String nombre, float precio) {
         this.idTramite = idTramite;
         this.nombre = nombre;
-        this.String = String;
+        this.precio = precio;
     }
 
-    public PrecioTramite(String nombre, float String) {
+    public PrecioTramite(String nombre, float precio) {
         this.nombre = nombre;
-        this.String = String;
+        this.precio = precio;
     }
 
     public Long getIdTramite() {
@@ -58,16 +61,16 @@ public class PrecioTramite {
     }
 
     public float getString() {
-        return String;
+        return precio;
     }
 
-    public void setString(float String) {
-        this.String = String;
+    public void setString(float precio) {
+        this.precio = precio;
     }
 
     @Override
     public String toString() {
-        return "PrecioTramite{" + "idTramite=" + idTramite + ", nombre=" + nombre + ", String=" + String + '}';
+        return "PrecioTramite{" + "idTramite=" + idTramite + ", nombre=" + nombre + ", precio=" + precio + '}';
     }
     
 }
