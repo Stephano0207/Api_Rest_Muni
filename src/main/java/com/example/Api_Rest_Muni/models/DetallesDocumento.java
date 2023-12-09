@@ -28,14 +28,22 @@ public class DetallesDocumento {
     private String estado;
     //Relacion de muchos a uno con Ciudadano
     @ManyToOne()
-    @MapsId("ciudadanoId")
-    @JoinColumn(name="ciudadano_id")
+    @MapsId("dni")
+    @JoinColumn(name="dni")
     private Ciudadano ciudadano;
     //Relacion de muchos a uno con Documento
     @ManyToOne()
     @MapsId("documentoId")
     @JoinColumn(name="documento_id")
     private Documento documento;
+
+    public DetallesDocumento(DetallesDocumentoKey id, String rutaArchivo, String estado, Ciudadano ciudadano, Documento documento) {
+        this.id = id;
+        this.rutaArchivo = rutaArchivo;
+        this.estado = estado;
+        this.ciudadano = ciudadano;
+        this.documento = documento;
+    }
 
     public DetallesDocumento(String rutaArchivo, String estado) {
         this.rutaArchivo = rutaArchivo;

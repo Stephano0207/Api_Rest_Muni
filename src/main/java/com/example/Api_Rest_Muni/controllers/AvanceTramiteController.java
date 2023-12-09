@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author stephano
  */
 @RestController
-@RequestMapping("/avanceTramites")
+@RequestMapping("api/v1/avanceTramites")
 public class AvanceTramiteController {
     
 }

@@ -32,25 +32,25 @@ public class Usuario {
     private String password;
     @ManyToOne()
     @JoinColumn(name = "fkUsuario")
-    //Relacion de muchos a uno con AreaTrabajo
-    private AreaTrabajo areaTrabajo;
+    //Relacion de muchos a uno con Rol
+    private Rol rol;
 
     //Relacion de uno a muchos con AvanceTramite
     @OneToMany(mappedBy="usuario")
     private ArrayList<AvanceTramite> avanceTramite;
 
-    public Usuario(Long idUsuario, String email, String password, AreaTrabajo areaTrabajo, ArrayList<AvanceTramite> avanceTramite) {
+    public Usuario(Long idUsuario, String email, String password, Rol rol, ArrayList<AvanceTramite> avanceTramite) {
         this.idUsuario = idUsuario;
         this.email = email;
         this.password = password;
-        this.areaTrabajo = areaTrabajo;
+        this.rol = rol;
         this.avanceTramite = avanceTramite;
     }
 
-    public Usuario(String email, String password, AreaTrabajo areaTrabajo, ArrayList<AvanceTramite> avanceTramite) {
+    public Usuario(String email, String password, Rol rol, ArrayList<AvanceTramite> avanceTramite) {
         this.email = email;
         this.password = password;
-        this.areaTrabajo = areaTrabajo;
+        this.rol = rol;
         this.avanceTramite = avanceTramite;
     }
     
@@ -61,15 +61,15 @@ public class Usuario {
 
     @Override
     public String toString() {
-        return "Usuario{" + "idUsuario=" + idUsuario + ", email=" + email + ", password=" + password + ", areaTrabajo=" + areaTrabajo + '}';
+        return "Usuario{" + "idUsuario=" + idUsuario + ", email=" + email + ", password=" + password + ", areaTrabajo=" + rol + '}';
     }
 
-    public AreaTrabajo getAreaTrabajo() {
-        return areaTrabajo;
+    public Rol getAreaTrabajo() {
+        return rol;
     }
 
-    public void setAreaTrabajo(AreaTrabajo areaTrabajo) {
-        this.areaTrabajo = areaTrabajo;
+    public void setAreaTrabajo(Rol rol) {
+        this.rol = rol;
     }
 
     public Long getIdUsuario() {

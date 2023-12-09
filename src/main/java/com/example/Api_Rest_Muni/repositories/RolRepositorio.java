@@ -4,7 +4,7 @@
  */
 package com.example.Api_Rest_Muni.repositories;
 
-import com.example.Api_Rest_Muni.models.AreaTrabajo;
+import com.example.Api_Rest_Muni.models.Rol;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
@@ -13,6 +13,6 @@ import org.springframework.stereotype.Repository;
  * @author stephano
  */
 @Repository
-public interface AreaTrabajoRepositorio extends CrudRepository<AreaTrabajo,Long> {
+public interface RolRepositorio extends CrudRepository<Rol,Long> {
     
 }

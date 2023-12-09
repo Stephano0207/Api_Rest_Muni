@@ -4,6 +4,7 @@
  */
 package com.example.Api_Rest_Muni.models;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -24,6 +25,7 @@ public class Publicaciones {
     @GeneratedValue(strategy=GenerationType.IDENTITY) 
     private Long idPublicacion;
     private String titulo;
+    @Column(columnDefinition="text")
     private String detalle;
     private Date fecha;
     private String imagen;

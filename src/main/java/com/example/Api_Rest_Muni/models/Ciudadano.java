@@ -11,30 +11,35 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import java.util.ArrayList;
 
-
 /**
  *
  * @author stephano
  */
 @Entity
-@Table(name="Ciudadano")
+@Table(name = "Ciudadano")
 public class Ciudadano {
 
     @Id
-    @Column(length=9)
+    @Column(length = 9)
     private Character dni;
+    @Column
     private String nombres;
+    @Column
     private String apellidos;
+    @Column
     private String direccion;
+    @Column
     private String numeroCelular;
+    @Column
     private String email;
     //Relacion de uno a muchos con DetallesDocumento
-    @OneToMany(mappedBy="ciudadano")
+    @OneToMany(mappedBy = "ciudadano")
     private ArrayList<DetallesDocumento> detallesDocumento;
-    
+
     //Relacion de uno a muchos con Pago
-    @OneToMany(mappedBy="ciudadano")
+    @OneToMany(mappedBy = "ciudadano")
     private ArrayList<Pago> pagos;
+
     public Ciudadano() {
     }
 
@@ -59,10 +64,6 @@ public class Ciudadano {
         this.pagos = pagos;
     }
 
-    
-
-    
-
     public String getNombres() {
         return nombres;
     }
@@ -86,8 +87,6 @@ public class Ciudadano {
     public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
-
-   
 
     public String getEmail() {
         return email;

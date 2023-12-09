@@ -17,12 +17,12 @@ import java.util.Objects;
 public class DetallesDocumentoKey implements Serializable {
    @Column(name="documento_id")
    private Long documentoId;
-   @Column(name="ciudadano_id",length=9)   
-   private Character ciudadanoId;
+   @Column(name="dni",length=9)   
+   private Character dni;
 
-    public DetallesDocumentoKey(Long documentoId, Character ciudadanoId) {
+    public DetallesDocumentoKey(Long documentoId, Character dni) {
         this.documentoId = documentoId;
-        this.ciudadanoId = ciudadanoId;
+        this.dni = dni;
     }
 
    
@@ -38,24 +38,24 @@ public class DetallesDocumentoKey implements Serializable {
         this.documentoId = documentoId;
     }
 
-    public Character getCiudadanoId() {
-        return ciudadanoId;
+    public Character getDni() {
+        return dni;
     }
 
-    public void setCiudadanoId(Character ciudadanoId) {
-        this.ciudadanoId = ciudadanoId;
+    public void setDni(Character dni) {
+        this.dni = dni;
     }
 
     @Override
     public String toString() {
-        return "DetallesDocumentoKey{" + "documentoId=" + documentoId + ", ciudadanoId=" + ciudadanoId + '}';
+        return "DetallesDocumentoKey{" + "documentoId=" + documentoId + ", dni=" + dni + '}';
     }
 
     @Override
     public int hashCode() {
         int hash = 3;
         hash = 23 * hash + Objects.hashCode(this.documentoId);
-        hash = 23 * hash + Objects.hashCode(this.ciudadanoId);
+        hash = 23 * hash + Objects.hashCode(this.dni);
         return hash;
     }
 
@@ -74,7 +74,7 @@ public class DetallesDocumentoKey implements Serializable {
         if (!Objects.equals(this.documentoId, other.documentoId)) {
             return false;
         }
-        return Objects.equals(this.ciudadanoId, other.ciudadanoId);
+        return Objects.equals(this.dni, other.dni);
     }
 
     

@@ -17,48 +17,49 @@ import java.util.ArrayList;
  * @author stephano
  */
 @Entity
-@Table(name="AreaTrabajo")
-public class AreaTrabajo {
+@Table(name="Rol")
+public class Rol {
 
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY) 
-    private Long idAreaTrabajo;
+    private Long idRol;
 
     private String nombre;
 
     ////Relacion de uno a muchos con Usuario
-   @OneToMany(mappedBy="areaTrabajo")
+   @OneToMany(mappedBy="rol")
     private ArrayList <Usuario> usuarios;
-    public AreaTrabajo() {
+    public Rol() {
     }
 
-    public AreaTrabajo(Long idAreaTrabajo, String nombre) {
-        this.idAreaTrabajo = idAreaTrabajo;
+    public Rol(Long idRol, String nombre) {
+        this.idRol = idRol;
         this.nombre = nombre;
     }
 
-    public AreaTrabajo(String nombre) {
+    public Rol(String nombre) {
         this.nombre = nombre;
     }
 
-    public AreaTrabajo(String nombre, ArrayList<Usuario> usuarios) {
-        this.nombre = nombre;
-        this.usuarios = usuarios;
-    }
-
-    public AreaTrabajo(Long idAreaTrabajo, String nombre, ArrayList<Usuario> usuarios) {
-        this.idAreaTrabajo = idAreaTrabajo;
+    public Rol(String nombre, ArrayList<Usuario> usuarios) {
         this.nombre = nombre;
         this.usuarios = usuarios;
     }
 
-    public Long getIdAreaTrabajo() {
-        return idAreaTrabajo;
+    public Rol(Long idRol, String nombre, ArrayList<Usuario> usuarios) {
+        this.idRol = idRol;
+        this.nombre = nombre;
+        this.usuarios = usuarios;
     }
 
-    public void setIdAreaTrabajo(Long idAreaTrabajo) {
-        this.idAreaTrabajo = idAreaTrabajo;
+    public Long getIdRol() {
+        return idRol;
     }
+
+    public void setIdRol(Long idRol) {
+        this.idRol = idRol;
+    }
+
 
     public String getNombre() {
         return nombre;
@@ -78,7 +79,7 @@ public class AreaTrabajo {
 
     @Override
     public String toString() {
-        return "AreaTrabajo{" + "idAreaTrabajo=" + idAreaTrabajo + ", nombre=" + nombre + '}';
+        return "Rol{" + "idRol=" + idRol + ", nombre=" + nombre + '}';
     }
 
 }

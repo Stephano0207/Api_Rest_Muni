@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author stephano
  */
 @RestController
-@RequestMapping("/publicaciones")
+@RequestMapping("api/v1/publicaciones")
 public class PublicacionController {
     @Autowired
     private PublicacionServicio publicacionServicio;
