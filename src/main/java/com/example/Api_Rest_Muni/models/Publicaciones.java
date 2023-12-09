@@ -26,6 +26,7 @@ public class Publicaciones {
     private String titulo;
     private String detalle;
     private Date fecha;
+    private String imagen;
     //Relacion de muchos a uno con Usuario
     @ManyToOne
     @JoinColumn(name="fkUsuario")
@@ -33,19 +34,24 @@ public class Publicaciones {
     public Publicaciones() {
     }
 
-    public Publicaciones(String titulo, String detalle, Date fecha) {
+    public Publicaciones(String titulo, String detalle, Date fecha, String imagen, Usuario usuario) {
         this.titulo = titulo;
         this.detalle = detalle;
         this.fecha = fecha;
+        this.imagen = imagen;
+        this.usuario = usuario;
     }
 
-    public Publicaciones(Long idPublicacion, String titulo, String detalle, Date fecha) {
+    public Publicaciones(Long idPublicacion, String titulo, String detalle, Date fecha, String imagen, Usuario usuario) {
         this.idPublicacion = idPublicacion;
         this.titulo = titulo;
         this.detalle = detalle;
         this.fecha = fecha;
+        this.imagen = imagen;
+        this.usuario = usuario;
     }
 
+ 
     public Long getIdPublicacion() {
         return idPublicacion;
     }
@@ -76,6 +82,22 @@ public class Publicaciones {
 
     public void setFecha(Date fecha) {
         this.fecha = fecha;
+    }
+
+    public String getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
     
     

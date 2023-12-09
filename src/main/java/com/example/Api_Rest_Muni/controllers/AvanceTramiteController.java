@@ -4,10 +4,15 @@
  */
 package com.example.Api_Rest_Muni.controllers;
 
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
 /**
  *
  * @author stephano
  */
+@RestController
+@RequestMapping("/avanceTramites")
 public class AvanceTramiteController {
     
 }
